@@ -1,0 +1,177 @@
+// =============================================================================
+// Prisma Schema for Rastasafari
+// =============================================================================
+// This schema defines the database structure for the Rastasafari tour booking system.
+// It's designed to work with Supabase (PostgreSQL) as the database provider.
+//
+// To generate migrations:
+//   npx prisma migrate dev --name init
+//
+// To sync with existing Supabase database:
+//   npx prisma db pull
+//
+// To generate Prisma Client:
+//   npx prisma generate
+// =============================================================================
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+// =============================================================================
+// Enums
+// =============================================================================
+
+/// Available tour session times
+enum SessionTime {
+  h9     @map("9h")
+  h12    @map("12h")
+  h14_30 @map("14h30")
+
+  @@map("session_time")
+}
+
+/// Booking status
+enum BookingStatus {
+  pending
+  confirmed
+  cancelled
+
+  @@map("booking_status")
+}
+
+/// Payment status
+enum PaymentStatus {
+  pending
+  paid
+  refunded
+
+  @@map("payment_status")
+}
+
+/// Contact message status
+enum MessageStatus {
+  new
+  read
+  replied
+
+  @@map("message_status")
+}
+
+/// Review source platform
+enum ReviewSource {
+  tripadvisor
+  viator
+  google
+  facebook
+  direct
+
+  @@map("review_source")
+}
+
+/// Pickup location options
+enum PickupLocation {
+  montego_bay
+  negril
+  ocho_rios
+  falmouth
+  runaway_bay
+  other
+
+  @@map("pickup_location")
+}
+
+// =============================================================================
+// Models
+// =============================================================================
+
+/// Customer information for bookings
+model Customer {
+  id        String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  fullName  String   @map("full_name") @db.VarChar(255)
+  email     String   @db.VarChar(255)
+  phone     String?  @db.VarChar(50)
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  // Relations
+  bookings Booking[]
+
+  // Indexes
+  @@index([email])
+  @@map("customers")
+}
+
+/// Tour bookings
+model Booking {
+  id              String        @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  bookingNumber   String        @unique @map("booking_number") @db.VarChar(20)
+  customerId      String        @map("customer_id") @db.Uuid
+  date            DateTime      @db.Date
+  session         SessionTime
+  adults          Int           @default(1)
+  children        Int           @default(0)
+  totalAmount     Decimal       @map("total_amount") @db.Decimal(10, 2)
+  pickupLocation  PickupLocation @map("pickup_location")
+  hotelAddress    String        @map("hotel_address") @db.Text
+  specialRequests String?       @map("special_requests") @db.Text
+  status          BookingStatus @default(pending)
+  paymentStatus   PaymentStatus @default(pending) @map("payment_status")
+  stripePaymentId String?       @map("stripe_payment_id") @db.VarChar(255)
+  stripeSessionId String?       @map("stripe_session_id") @db.VarChar(255)
+  createdAt       DateTime      @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt       DateTime      @default(now()) @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  // Relations
+  customer Customer @relation(fields: [customerId], references: [id], onDelete: Cascade)
+
+  // Indexes
+  @@index([customerId])
+  @@index([date, session])
+  @@index([status])
+  @@index([paymentStatus])
+  @@index([createdAt])
+  @@map("bookings")
+}
+
+/// Contact form messages
+model ContactMessage {
+  id        String        @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name      String        @db.VarChar(255)
+  email     String        @db.VarChar(255)
+  phone     String?       @db.VarChar(50)
+  subject   String        @db.VarChar(255)
+  message   String        @db.Text
+  status    MessageStatus @default(new)
+  repliedAt DateTime?     @map("replied_at") @db.Timestamptz(6)
+  createdAt DateTime      @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  // Indexes
+  @@index([status])
+  @@index([createdAt])
+  @@map("contact_messages")
+}
+
+/// Customer reviews from various platforms
+model Review {
+  id         String       @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  author     String       @db.VarChar(255)
+  rating     Int          @db.SmallInt
+  comment    String       @db.Text
+  reviewDate DateTime     @map("review_date") @db.Date
+  source     ReviewSource
+  sourceUrl  String?      @map("source_url") @db.Text
+  isFeatured Boolean      @default(false) @map("is_featured")
+  createdAt  DateTime     @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  // Indexes
+  @@index([source])
+  @@index([isFeatured])
+  @@index([rating])
+  @@map("reviews")
+}

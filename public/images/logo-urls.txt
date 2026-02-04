@@ -1,0 +1,86 @@
+# Rastasafari Experience Jamaica - Logo Research Results
+# Date: 2026-02-03
+# ========================================================
+
+## SUMMARY
+Unfortunately, the official logo image URLs could not be directly extracted from web searches.
+Instagram and TikTok profile pictures are dynamically generated and require authentication to access.
+Below are the best sources to manually obtain the logo.
+
+## SOCIAL MEDIA PROFILES (to view/download logo/profile picture)
+
+### Instagram
+- Profile: @rastasafariexperience
+- URL: https://www.instagram.com/rastasafariexperience/
+- Followers: 6,218
+- Bio: "The top rated (by far) outdoor activity in the whole of Jamaica on TripAdvisor"
+- Note: Use an Instagram profile picture downloader tool to extract the logo
+
+### TikTok
+- Profile: @rastasafari.exper
+- URL: https://www.tiktok.com/@rastasafari.exper
+- Note: Profile picture can be downloaded via TikTok profile viewers
+
+## BOOKING PLATFORMS (may contain supplier logo)
+
+### TripAdvisor
+- URL: https://www.tripadvisor.com/Attraction_Review-g147311-d13295412-Reviews-Rastasafari_Experience-Montego_Bay_Saint_James_Parish_Jamaica.html
+- Status: Business listing with photos and reviews
+
+### Viator
+- URL: https://www.viator.com/tours/Montego-Bay/Rastasafari-Experience-from-Montego-Bay/d432-87804P2
+- Status: Tour listing with operator information
+
+### GetYourGuide
+- URL: https://www.getyourguide.com/montego-bay-l238/rastasafari-experience-t550999/
+- Status: UTV Experience tour listing
+
+### Expedia
+- URL: https://www.expedia.com/things-to-do/rastasafari-experience-from-montego-bay.a1746609.activity-details
+- Status: Activity booking page
+
+## OFFICIAL TOURISM LISTING
+
+### Visit Jamaica (Official Tourism Board)
+- URL: https://www.visitjamaica.com/listing/rastasafari-experience/2382/
+- Note: May contain official business logo
+
+## THIRD-PARTY INFORMATION PAGES
+
+### RastaSafari Experience Info Page
+- URL: https://rastasafari-experience.com-place.com/
+- Location: Roaring River, Jamaica
+
+### Simply Local Life Article
+- URL: https://simplylocal.life/rastasafari-experience/
+- Article: "Ride Through Real Jamaica Countryside"
+
+## BUSINESS INFORMATION
+
+- Company Name: Rastasafari Experience Ltd.
+- Location: Roaring River, Westmoreland, Jamaica
+- Instagram Location ID: 648558462201242
+- Phone: 876-445-7203
+
+## BRANDING NOTES
+
+The business uses:
+- Rastafarian colors (red, gold, green)
+- "Branded entrance" mentioned in reviews (red, gold and green gate)
+- Tagline: "Authentic, Thrilling, Eye opening"
+
+## RECOMMENDED ACTIONS TO GET LOGO
+
+1. Visit Instagram profile directly and screenshot/download profile picture
+2. Use Instagram profile picture downloader tool (e.g., instadp.com)
+3. Contact business directly at 876-445-7203 for official logo files
+4. Check Viator/GetYourGuide supplier profile for business logo
+5. Visit their physical location for branded materials
+
+## TOOLS FOR DOWNLOADING INSTAGRAM PROFILE PICTURES
+
+- https://www.save-free.com/en/profile-downloader/
+- https://instadp.com
+- https://instadownloader.co/profile-picture
+
+Enter username: rastasafariexperience

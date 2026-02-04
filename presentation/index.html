@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rastasafari Experience - Présentation</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --rasta-red: #E31C23;
+            --rasta-gold: #FED100;
+            --rasta-green: #009B3A;
+            --rasta-black: #1a1a1a;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--rasta-black);
+            color: white;
+            overflow-x: hidden;
+        }
+
+        .slide {
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-bottom: 4px solid;
+            border-image: linear-gradient(90deg, var(--rasta-red), var(--rasta-gold), var(--rasta-green)) 1;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, var(--rasta-red), var(--rasta-gold), var(--rasta-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: var(--rasta-gold);
+            margin-bottom: 15px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--rasta-green) 0%, var(--rasta-black) 50%, var(--rasta-red) 100%);
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+        }
+
+        .hero .flag {
+            font-size: 4rem;
+            margin: 20px 0;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin: 5px;
+        }
+
+        .badge-gold { background: var(--rasta-gold); color: black; }
+        .badge-green { background: var(--rasta-green); color: white; }
+        .badge-red { background: var(--rasta-red); color: white; }
+
+        .card {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 10px 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .card-title {
+            color: var(--rasta-gold);
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .stat {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .stat:last-child { border: none; }
+
+        .stat-label { color: #aaa; }
+        .stat-value { font-weight: bold; color: var(--rasta-gold); }
+
+        .list-item {
+            padding: 12px;
+            margin: 8px 0;
+            background: rgba(0,155,58,0.2);
+            border-left: 4px solid var(--rasta-green);
+            border-radius: 0 10px 10px 0;
+        }
+
+        .price-big {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--rasta-gold);
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .progress-bar {
+            height: 30px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 10px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .score-82 { width: 82%; background: var(--rasta-green); }
+        .score-78 { width: 78%; background: var(--rasta-gold); color: black; }
+        .score-68 { width: 68%; background: orange; }
+        .score-62 { width: 62%; background: var(--rasta-red); }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .step {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: var(--rasta-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .tech-item {
+            padding: 10px 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 25px;
+            font-size: 0.9rem;
+        }
+
+        .check {
+            color: var(--rasta-green);
+            margin-right: 10px;
+        }
+
+        .final {
+            text-align: center;
+            background: linear-gradient(180deg, var(--rasta-black) 0%, #0d3d0d 100%);
+        }
+
+        .final h1 {
+            font-size: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: var(--rasta-green);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-top: 20px;
+        }
+
+        @media (min-width: 768px) {
+            .slide { padding: 40px; }
+            h1 { font-size: 3rem; }
+            .grid-2 { grid-template-columns: 1fr 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Slide 1: Hero -->
+    <div class="slide hero">
+        <div class="flag">🇯🇲</div>
+        <h1>RASTASAFARI EXPERIENCE</h1>
+        <p style="font-size: 1.2rem; margin: 20px 0;">Site Web Transactionnel</p>
+        <div>
+            <span class="badge badge-gold">⭐ 9.8/10</span>
+            <span class="badge badge-green">🏆 Top 1% TripAdvisor</span>
+        </div>
+    </div>
+
+    <!-- Slide 2: Le Client -->
+    <div class="slide">
+        <h1>📍 LE CLIENT</h1>
+        <div class="card">
+            <div class="card-title">Rastasafari Experience Jamaica</div>
+            <div class="stat">
+                <span class="stat-label">📍 Lieu</span>
+                <span class="stat-value">Roaring River, Westmoreland</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">⭐ Note</span>
+                <span class="stat-value">9.8/10</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">💬 Avis</span>
+                <span class="stat-value">2,142+ reviews</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">📞 Téléphone</span>
+                <span class="stat-value">876-445-7203</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 3: Le Prix -->
+    <div class="slide">
+        <h1>💰 L'OFFRE</h1>
+        <div class="price-big">$165 USD</div>
+        <p style="text-align: center; color: #aaa;">par personne • tout inclus</p>
+        <div class="card" style="margin-top: 30px;">
+            <div class="stat">
+                <span class="stat-label">⏱️ Durée</span>
+                <span class="stat-value">3h30-4h</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">👥 Max</span>
+                <span class="stat-value">24 personnes</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">🕐 Sessions</span>
+                <span class="stat-value">9h, 12h, 14h30</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 4: Inclus -->
+    <div class="slide">
+        <h1>✅ INCLUS</h1>
+        <div class="list-item">🚗 Transport hôtel aller-retour</div>
+        <div class="list-item">🏎️ ATV Polaris Side-by-Side 900</div>
+        <div class="list-item">🍹 Boissons de bienvenue</div>
+        <div class="list-item">🍽️ Déjeuner Ital bio</div>
+        <div class="list-item">🏊 Baignade source minérale</div>
+        <div class="list-item">🌿 Visite champ de ganja</div>
+        <div class="list-item">🍉 Dégustation de fruits</div>
+        <div class="list-item">👨‍🏫 Guides certifiés</div>
+    </div>
+
+    <!-- Slide 5: Réseaux Sociaux -->
+    <div class="slide">
+        <h1>📱 RÉSEAUX SOCIAUX</h1>
+        <div class="card">
+            <div class="stat">
+                <span class="stat-label">📸 Instagram</span>
+                <span class="stat-value">@rastasafariexperience<br><small style="color:#aaa">6,218 abonnés</small></span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">🎵 TikTok</span>
+                <span class="stat-value">@rastasafari.exper</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">📘 Facebook</span>
+                <span style="color: var(--rasta-red);">❌ Non trouvé</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 6: Stack Tech -->
+    <div class="slide">
+        <h1>🛠️ STACK TECH</h1>
+        <div class="tech-stack">
+            <div class="tech-item">⚡ Next.js 14</div>
+            <div class="tech-item">📘 TypeScript</div>
+            <div class="tech-item">🎨 Tailwind CSS</div>
+            <div class="tech-item">🗄️ Supabase</div>
+            <div class="tech-item">💳 Stripe</div>
+            <div class="tech-item">📧 SendGrid</div>
+            <div class="tech-item">🗺️ Google Maps</div>
+            <div class="tech-item">🚀 Vercel</div>
+        </div>
+        <div class="card" style="margin-top: 30px;">
+            <div class="card-title">🎨 Palette Rasta</div>
+            <div style="display: flex; gap: 10px; margin-top: 15px;">
+                <div style="flex:1; height: 50px; background: var(--rasta-red); border-radius: 10px;"></div>
+                <div style="flex:1; height: 50px; background: var(--rasta-gold); border-radius: 10px;"></div>
+                <div style="flex:1; height: 50px; background: var(--rasta-green); border-radius: 10px;"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 7: Réservation -->
+    <div class="slide">
+        <h1>📅 RÉSERVATION</h1>
+        <h2>5 Étapes</h2>
+        <div class="step">
+            <div class="step-number">1</div>
+            <div><strong>Date</strong><br><small style="color:#aaa">Calendrier + Session</small></div>
+        </div>
+        <div class="step">
+            <div class="step-number">2</div>
+            <div><strong>Participants</strong><br><small style="color:#aaa">Adultes / Enfants</small></div>
+        </div>
+        <div class="step">
+            <div class="step-number">3</div>
+            <div><strong>Pickup</strong><br><small style="color:#aaa">Zone + Adresse hôtel</small></div>
+        </div>
+        <div class="step">
+            <div class="step-number">4</div>
+            <div><strong>Informations</strong><br><small style="color:#aaa">Nom, Email, WhatsApp</small></div>
+        </div>
+        <div class="step">
+            <div class="step-number">5</div>
+            <div><strong>Paiement</strong><br><small style="color:#aaa">Stripe / PayPal</small></div>
+        </div>
+    </div>
+
+    <!-- Slide 8: Scores -->
+    <div class="slide">
+        <h1>📊 SCORES REVIEW</h1>
+
+        <p style="margin: 15px 0;">🔍 SEO</p>
+        <div class="progress-bar"><div class="progress-fill score-82">82%</div></div>
+
+        <p style="margin: 15px 0;">🎨 UX/UI</p>
+        <div class="progress-bar"><div class="progress-fill score-78">78%</div></div>
+
+        <p style="margin: 15px 0;">💻 Frontend</p>
+        <div class="progress-bar"><div class="progress-fill score-78">78%</div></div>
+
+        <p style="margin: 15px 0;">🔗 Intégration</p>
+        <div class="progress-bar"><div class="progress-fill score-68">68%</div></div>
+
+        <p style="margin: 15px 0;">🔒 Sécurité</p>
+        <div class="progress-bar"><div class="progress-fill score-62">62%</div></div>
+
+        <div class="card" style="margin-top: 20px; text-align: center;">
+            <div class="card-title">MOYENNE GLOBALE</div>
+            <div class="price-big" style="margin: 10px 0;">73.6%</div>
+        </div>
+    </div>
+
+    <!-- Slide 9: Livrables -->
+    <div class="slide">
+        <h1>✅ LIVRABLES</h1>
+        <div class="list-item"><span class="check">✓</span> Analyse 3 sites sources</div>
+        <div class="list-item"><span class="check">✓</span> Recherche réseaux sociaux</div>
+        <div class="list-item"><span class="check">✓</span> Plan complet du site</div>
+        <div class="list-item"><span class="check">✓</span> 6 pages complètes</div>
+        <div class="list-item"><span class="check">✓</span> Système réservation 5 étapes</div>
+        <div class="list-item"><span class="check">✓</span> Paiement Stripe/PayPal</div>
+        <div class="list-item"><span class="check">✓</span> Base de données Supabase</div>
+        <div class="list-item"><span class="check">✓</span> Templates email</div>
+        <div class="list-item"><span class="check">✓</span> 5 rapports de review</div>
+        <div class="list-item"><span class="check">✓</span> Configuration Vercel</div>
+
+        <div class="card" style="margin-top: 20px; text-align: center;">
+            <div class="price-big" style="font-size: 2rem; margin: 0;">101 fichiers</div>
+            <p style="color: #aaa;">créés par 27 agents</p>
+        </div>
+    </div>
+
+    <!-- Slide 10: Final -->
+    <div class="slide final">
+        <div class="flag" style="font-size: 5rem;">🇯🇲</div>
+        <h1>PROJET TERMINÉ</h1>
+        <p style="font-size: 1.2rem; margin: 20px 0; color: var(--rasta-gold);">Rastasafari Experience Jamaica</p>
+
+        <div class="card" style="text-align: left; margin: 30px 0;">
+            <div class="stat">
+                <span class="stat-label">📁 Dossier</span>
+                <span class="stat-value">/Desktop/rastasafari/</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">📞 Contact</span>
+                <span class="stat-value">876-445-7203</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">📸 Instagram</span>
+                <span class="stat-value">@rastasafariexperience</span>
+            </div>
+        </div>
+
+        <p style="font-size: 2rem; margin-top: 30px;">🙏 One Love 🙏</p>
+    </div>
+</body>
+</html>

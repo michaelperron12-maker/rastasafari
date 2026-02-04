@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Static Sitemap for Rastasafari Experience Jamaica
+  Note: This static version is a fallback. The dynamic sitemap.ts in /src/app/
+  will generate the sitemap automatically when building the Next.js application.
+
+  Last Updated: 2024-01-15
+  Website: https://rastasafari.com
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+                            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://rastasafari.com</loc>
+    <lastmod>2024-01-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://rastasafari.com/images/og-image.jpg</image:loc>
+      <image:title>Rastasafari Experience Jamaica - #1 Rated ATV &amp; Cultural Tour</image:title>
+      <image:caption>Experience authentic Rastafari culture with ATV adventure, Ital cuisine, and mineral springs in Jamaica</image:caption>
+    </image:image>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rastasafari.com"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rastasafari.com/es"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rastasafari.com/fr"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://rastasafari.com/de"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rastasafari.com"/>
+  </url>
+
+  <!-- Booking Page -->
+  <url>
+    <loc>https://rastasafari.com/booking</loc>
+    <lastmod>2024-01-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <!-- Experiences Page -->
+  <url>
+    <loc>https://rastasafari.com/experiences</loc>
+    <lastmod>2024-01-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://rastasafari.com/images/experiences-hero.jpg</image:loc>
+      <image:title>Rastasafari Tours &amp; Experiences</image:title>
+    </image:image>
+  </url>
+
+  <!-- About Page -->
+  <url>
+    <loc>https://rastasafari.com/about</loc>
+    <lastmod>2024-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Gallery Page -->
+  <url>
+    <loc>https://rastasafari.com/gallery</loc>
+    <lastmod>2024-01-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Reviews Page -->
+  <url>
+    <loc>https://rastasafari.com/reviews</loc>
+    <lastmod>2024-01-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- FAQ Page -->
+  <url>
+    <loc>https://rastasafari.com/faq</loc>
+    <lastmod>2024-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Contact Page -->
+  <url>
+    <loc>https://rastasafari.com/contact</loc>
+    <lastmod>2024-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Location-Specific Landing Pages -->
+  <url>
+    <loc>https://rastasafari.com/tours/montego-bay</loc>
+    <lastmod>2024-01-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://rastasafari.com/images/montego-bay-tour.jpg</image:loc>
+      <image:title>Rastasafari ATV Tour from Montego Bay</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://rastasafari.com/tours/negril</loc>
+    <lastmod>2024-01-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://rastasafari.com/images/negril-tour.jpg</image:loc>
+      <image:title>Rastasafari Experience from Negril</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://rastasafari.com/tours/ocho-rios</loc>
+    <lastmod>2024-01-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://rastasafari.com/tours/falmouth</loc>
+    <lastmod>2024-01-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Activity-Specific Landing Pages -->
+  <url>
+    <loc>https://rastasafari.com/activities/atv-tour</loc>
+    <lastmod>2024-01-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://rastasafari.com/images/atv-adventure.jpg</image:loc>
+      <image:title>Jamaica ATV Tour Adventure</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://rastasafari.com/activities/cultural-experience</loc>
+    <lastmod>2024-01-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://rastasafari.com/images/cultural-experience.jpg</image:loc>
+      <image:title>Authentic Rastafari Cultural Experience</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://rastasafari.com/activities/ital-food</loc>
+    <lastmod>2024-01-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://rastasafari.com/images/ital-cuisine.jpg</image:loc>
+      <image:title>Traditional Jamaican Ital Food Experience</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://rastasafari.com/activities/mineral-springs</loc>
+    <lastmod>2024-01-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://rastasafari.com/images/mineral-springs.jpg</image:loc>
+      <image:title>Natural Mineral Springs Jamaica</image:title>
+    </image:image>
+  </url>
+
+  <!-- Legal Pages -->
+  <url>
+    <loc>https://rastasafari.com/privacy</loc>
+    <lastmod>2024-01-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://rastasafari.com/terms</loc>
+    <lastmod>2024-01-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- Language Alternates -->
+  <url>
+    <loc>https://rastasafari.com/es</loc>
+    <lastmod>2024-01-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://rastasafari.com/fr</loc>
+    <lastmod>2024-01-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://rastasafari.com/de</loc>
+    <lastmod>2024-01-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>
