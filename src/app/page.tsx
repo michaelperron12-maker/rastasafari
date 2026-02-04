@@ -46,23 +46,25 @@ const AnimatedCounter = ({ end, duration = 2000, suffix = '' }: { end: number; d
   return <span>{count.toLocaleString()}{suffix}</span>;
 };
 
-// ATV Icon Component (4x4 Quad)
+// ATV Icon Component (4x4 Quad) - Clear recognizable design
 const ATVIcon = ({ className = "w-8 h-8" }: { className?: string }) => (
-  <svg className={className} viewBox="0 0 64 64" fill="currentColor">
-    {/* ATV Body */}
-    <path d="M12 32c0-2 1-4 3-5l8-4c2-1 4-1 6 0l10 5c2 1 3 3 3 5v8c0 2-1 4-3 5l-8 4c-2 1-4 1-6 0l-10-5c-2-1-3-3-3-5v-8z" fill="currentColor"/>
-    {/* Front wheels */}
-    <circle cx="16" cy="44" r="8" fill="currentColor" stroke="currentColor" strokeWidth="3"/>
-    <circle cx="16" cy="44" r="4" fill="#333"/>
-    {/* Rear wheels */}
-    <circle cx="48" cy="44" r="8" fill="currentColor" stroke="currentColor" strokeWidth="3"/>
-    <circle cx="48" cy="44" r="4" fill="#333"/>
-    {/* Handlebars */}
-    <path d="M20 24l-6-4M44 24l6-4" stroke="currentColor" strokeWidth="3" strokeLinecap="round"/>
+  <svg className={className} viewBox="0 0 100 100" fill="currentColor">
+    {/* 4 Big Wheels */}
+    <circle cx="20" cy="70" r="15" fill="currentColor" opacity="0.9"/>
+    <circle cx="20" cy="70" r="8" fill="#222"/>
+    <circle cx="80" cy="70" r="15" fill="currentColor" opacity="0.9"/>
+    <circle cx="80" cy="70" r="8" fill="#222"/>
+    {/* ATV Body/Frame */}
+    <rect x="15" y="45" width="70" height="20" rx="5" fill="currentColor"/>
     {/* Seat */}
-    <ellipse cx="32" cy="28" rx="8" ry="4" fill="currentColor"/>
-    {/* Frame */}
-    <path d="M16 36h32M24 28v12M40 28v12" stroke="#333" strokeWidth="2"/>
+    <ellipse cx="50" cy="40" rx="15" ry="8" fill="currentColor"/>
+    {/* Handlebars */}
+    <rect x="25" y="25" width="8" height="20" rx="2" fill="currentColor"/>
+    <rect x="67" y="25" width="8" height="20" rx="2" fill="currentColor"/>
+    <rect x="20" y="20" width="18" height="6" rx="2" fill="currentColor"/>
+    <rect x="62" y="20" width="18" height="6" rx="2" fill="currentColor"/>
+    {/* Front Guard */}
+    <path d="M30 50 L50 35 L70 50" stroke="currentColor" strokeWidth="4" fill="none"/>
   </svg>
 );
 
