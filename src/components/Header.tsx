@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import MobileMenu from './MobileMenu'
 import { LanguageSwitcher, useLocale } from './LanguageSwitcher'
 import { translations, Locale } from '@/lib/i18n'
@@ -78,13 +79,15 @@ export default function Header() {
               className="flex items-center gap-3 group"
               aria-label="Rastasafari Experience Jamaica - Home"
             >
-              {/* Placeholder Logo */}
-              <div className="relative w-12 h-12 rounded-full overflow-hidden bg-rasta-black flex items-center justify-center border-2 border-rasta-gold group-hover:border-rasta-green transition-colors duration-300">
-                <div className="absolute inset-0 opacity-20 gradient-rasta" />
-                <span className="relative text-white font-heading font-bold text-xl">
-                  R
-                </span>
-              </div>
+              {/* Logo Rastasafari */}
+              <Image
+                src="/images/logo-clean.png"
+                alt="Rastasafari Logo"
+                width={120}
+                height={56}
+                className="h-10 sm:h-12 w-auto"
+                priority
+              />
               <div className="hidden sm:block">
                 <span
                   className={`font-heading font-bold text-lg leading-tight block ${
